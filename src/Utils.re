@@ -31,4 +31,5 @@ let distanceFromBottom: unit => int =
   };
 
 /* registerServiceWorker */
-[@bs.module] external registerServiceWorker: unit => unit = "src/registerServiceWorker";
+[@bs.module]
+external registerServiceWorker: unit => unit = "./registerServiceWorker";

@@ -3,6 +3,7 @@ module Styles = {
 
   let summary =
     style([
+      fontSize(em(1.0)),
       marginTop(em(1.0)),
       marginBottom(em(1.0)),
       marginLeft(px(0)),
@@ -24,7 +25,7 @@ type action =
 
 [@react.component]
 let make = (~content: ReasonReact.reactElement, ~title: string) =>
-  <summary className=Styles.summary>
-    <details> {ReasonReact.string(title)} </details>
+  <details>
+    <summary className=Styles.summary> {ReasonReact.string(title)} </summary>
     content
-  </summary>;
+  </details>;

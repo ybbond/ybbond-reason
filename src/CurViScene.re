@@ -30,9 +30,7 @@ let make = () => {
       initialState,
     );
 
-  <div>
-    <span>
-      <Spoiler content={ReasonReact.string("Hello")} title="Yeay" />
-    </span>
-  </div>;
+  <React.Fragment>
+    <Spoiler content={ReasonReact.string("Hello")} title="Yeay" />
+  </React.Fragment>;
 };

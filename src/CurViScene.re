@@ -30,15 +30,109 @@ let make = () => {
       initialState,
     );
 
-  <React.Fragment>
-    <Spoiler content={ReasonReact.string("Hello")} title="Yeay" />
+  let questContent =
+    <ContentList
+      content=[|
+        {
+          variant: Done,
+          text:
+            <span>
+              {ReasonReact.string("Design apprentice at X-Graphic.")}
+            </span>,
+        },
+        {
+          variant: Done,
+          text:
+            <span>
+              {ReasonReact.string("Field inspector at Touchten Games.")}
+            </span>,
+        },
+        {
+          variant: Done,
+          text:
+            <span>
+              {ReasonReact.string("Reactive engineer at Vospay.")}
+            </span>,
+        },
+        {
+          variant: Progress,
+          text:
+            <span>
+              {ReasonReact.string("Frontend Engineer at Kumparan.")}
+            </span>,
+        },
+      |]
+    />;
+
+  let triviaContent =
     <ContentList
       content=[|
         {
           variant: Default,
-          text: <span> {ReasonReact.string("hello")} </span>,
+          text:
+            <span>
+              {ReasonReact.string("Studied CS in Binus, never finished it.")}
+            </span>,
+        },
+        {
+          variant: Default,
+          text:
+            <span>
+              {ReasonReact.string("Drinks coffee.")}
+            </span>,
+        },
+        {
+          variant: Default,
+          text:
+            <span>
+              {ReasonReact.string("Loves moshing at indie band gigs.")}
+            </span>,
+        },
+        {
+          variant: Default,
+          text:
+            <span>
+              {ReasonReact.string("Vim user.")}
+            </span>,
+        },
+        {
+          variant: Default,
+          text:
+            <span>
+              {ReasonReact.string("Jakarta, Indonesia")}
+            </span>,
         },
       |]
-    />
+    />;
+
+  let contactContent =
+    <ContentList
+      content=[|
+        {
+          variant: Default,
+          text:
+            <span>
+              {ReasonReact.string("everywhere: ybbond or bandungpenting")}
+            </span>,
+        },
+        {
+          variant: Default,
+          text:
+            <span> {ReasonReact.string("bandungpenting@gmail.com")} </span>,
+        },
+        {
+          variant: Default,
+          text:
+            <span>
+              {ReasonReact.string("Instagram, Github, Twitter.")}
+            </span>,
+        },
+      |]
+    />;
+
+  <React.Fragment>
+    <Spoiler content=questContent title="Quests" />
+    <Spoiler content=triviaContent title="Good to Know" />
+    <Spoiler content=contactContent title="Find me" />
   </React.Fragment>;
 };

@@ -32,5 +32,13 @@ let make = () => {
 
   <React.Fragment>
     <Spoiler content={ReasonReact.string("Hello")} title="Yeay" />
+    <ContentList
+      content=[|
+        {
+          variant: Default,
+          text: <span> {ReasonReact.string("hello")} </span>,
+        },
+      |]
+    />
   </React.Fragment>;
 };

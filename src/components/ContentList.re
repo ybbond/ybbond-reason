@@ -61,5 +61,5 @@ let make = (~content: array(listContent)) => {
       content,
     );
 
-  <ul className=Styles.ul> {React.array(contentMapped)} </ul>;
+  <ul className=Styles.ul> {ReasonReact.array(contentMapped)} </ul>;
 };

@@ -10,7 +10,7 @@ module Styles = {
       marginRight(px(0)),
       flex(`num(1.0)),
       textAlign(`left),
-      /* outline(`none), */
+      outlineStyle(`none),
       cursor(`pointer),
       userSelect(`none),
     ]);

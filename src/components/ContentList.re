@@ -48,15 +48,15 @@ type listContent = {
 [@react.component]
 let make = (~content: array(listContent)) => {
   let contentMapped =
-    Array.map(
-      (item: listContent) => {
+    Array.mapi(
+      (key, item: listContent) => {
         let listPointType =
           switch (item.variant) {
           | Progress => Styles.pProgress
           | Done => Styles.pDone
           | Default => Styles.pDefault
           };
-        <li> <p className=listPointType> {item.text} </p> </li>;
+        <li key=string_of_int(key)> <p className=listPointType> {item.text} </p> </li>;
       },
       content,
     );

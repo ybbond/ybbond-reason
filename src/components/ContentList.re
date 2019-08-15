@@ -1,5 +1,6 @@
 module Styles = {
   open Css;
+
   let ul =
     style([
       marginLeft(em(2.5)),
@@ -56,7 +57,9 @@ let make = (~content: array(listContent)) => {
           | Done => Styles.pDone
           | Default => Styles.pDefault
           };
-        <li key=string_of_int(key)> <p className=listPointType> {item.text} </p> </li>;
+        <li key={string_of_int(key)}>
+          <p className=listPointType> {item.text} </p>
+        </li>;
       },
       content,
     );

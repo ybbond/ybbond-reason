@@ -34,14 +34,14 @@ let make = () => {
 
   let content = () =>
     switch (url.path) {
-    | ["/uses"] => <UsesScene />
-    | ["/"] => <CurViScene />
+    | ["uses"] => <UsesScene />
+    | [""] => <CurViScene />
     | _ =>
       ReasonReact.Router.push("");
       <CurViScene />;
     };
 
   <div className=Styles.container>
-    <main className=Styles.main> <Styled /> {content()} </main>
+    <div className=Styles.main> <Styled /> {content()} </div>
   </div>;
 };

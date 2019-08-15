@@ -76,10 +76,7 @@ let make = () => {
         },
         {
           variant: Default,
-          text:
-            <span>
-              {ReasonReact.string("Drinks coffee.")}
-            </span>,
+          text: <span> {ReasonReact.string("Drinks coffee.")} </span>,
         },
         {
           variant: Default,
@@ -90,17 +87,11 @@ let make = () => {
         },
         {
           variant: Default,
-          text:
-            <span>
-              {ReasonReact.string("Vim user.")}
-            </span>,
+          text: <span> {ReasonReact.string("Vim user.")} </span>,
         },
         {
           variant: Default,
-          text:
-            <span>
-              {ReasonReact.string("Jakarta, Indonesia")}
-            </span>,
+          text: <span> {ReasonReact.string("Jakarta, Indonesia")} </span>,
         },
       |]
     />;
@@ -124,7 +115,12 @@ let make = () => {
           variant: Default,
           text:
             <span>
-              {ReasonReact.string("Instagram, Github, Twitter.")}
+              <Link href="https://www.instagram.com/ybbond" text="Instagram" />
+              {ReasonReact.string(", ")}
+              <Link href="https://github.com/ybbond" text="Github" />
+              {ReasonReact.string(", ")}
+              <Link href="https://twitter.com/bandungpenting" text="Twitter" />
+              {ReasonReact.string(".")}
             </span>,
         },
       |]

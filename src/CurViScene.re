@@ -91,7 +91,14 @@ let make = () => {
         },
         {
           variant: Default,
-          text: <span> {ReasonReact.string("Jakarta, Indonesia")} </span>,
+          text:
+            <span>
+              {ReasonReact.string("from ")}
+              <Link
+                href="https://goo.gl/maps/gMGbA5juGAx"
+                text="Jakarta, Indonesia"
+              />
+            </span>,
         },
       |]
     />;
@@ -109,7 +116,12 @@ let make = () => {
         {
           variant: Default,
           text:
-            <span> {ReasonReact.string("bandungpenting@gmail.com")} </span>,
+            <span>
+              <Link
+                href="mailto:bandungpenting@gmail.com"
+                text="bandungpenting@gmail.com"
+              />
+            </span>,
         },
         {
           variant: Default,

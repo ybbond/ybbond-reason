@@ -1,5 +1,10 @@
 open Utils;
 
+module Styles = {
+  open Css;
+  let toggler = style([cursor(`pointer), userSelect(`none)]);
+};
+
 type state = {dark: bool};
 type action =
   | ToggleDark;
@@ -69,8 +74,12 @@ body {
 
   <React.Fragment>
     <style dangerouslySetInnerHTML={dangerousHtml(setStyle)} />
-    <button onClick={_ => dispatch(ToggleDark)}>
-      {ReasonReact.string("hai")}
-    </button>
+    <div onClick={_ => dispatch(ToggleDark)} className=Styles.toggler>
+      <p>
+        {ReasonReact.string(
+           (state.dark ? {j|☑|j} : {j|☐|j}) ++ " Dark Mode",
+         )}
+      </p>
+    </div>
   </React.Fragment>;
 };

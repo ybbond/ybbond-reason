@@ -2,7 +2,8 @@ open Utils;
 
 module Styles = {
   open Css;
-  let toggler = style([cursor(`pointer), userSelect(`none)]);
+  let toggler =
+    style([cursor(`pointer), userSelect(`none), marginTop(`em(2.0))]);
 };
 
 type state = {dark: bool};
@@ -29,12 +30,20 @@ let make = () => {
   let anchorHover = state.dark ? "#2d2d2d" : "#d8dcd5";
 
   let htmlStyle =
-    "html { height: 100vh; font-family: 'Cousine', monospace; background-color:"
+    "html { height: 100vh; font-family: 'Cousine for Powerline', monospace; background-color:"
     ++ backgroundColor
     ++ "; color:"
     ++ textColor
     ++ "; }";
-  let fontFace = "@import url('https://fonts.googleapis.com/css?family=Cousine:400,700&display=swap');";
+  /* let fontFace = "@import url('https://fonts.googleapis.com/css?family=Cousine:400,700&display=swap');"; */
+  let fontFace = {j|
+@font-face {
+  font-family: 'Cousine for Powerline';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/Cousine for Powerline.ttf'); /* IE9 Compat Modes */
+}
+  |j};
   let bodyStyle = {j|
 body {
   display: flex;

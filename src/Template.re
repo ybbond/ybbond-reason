@@ -1,4 +1,3 @@
-[@react.component]
 let make = (~content, ~title, ()) => {j|
   <!DOCTYPE html>
     <html>

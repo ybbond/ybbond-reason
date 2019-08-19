@@ -29,13 +29,14 @@ let make = () => {
   let anchorColor = state.dark ? "#d8dcd5" : "#2d2d2d";
   let anchorHover = state.dark ? "#2d2d2d" : "#d8dcd5";
 
-  let htmlStyle =
-    "html { height: 100vh; font-family: 'Cousine for Powerline', monospace; background-color:"
-    ++ backgroundColor
-    ++ "; color:"
-    ++ textColor
-    ++ "; }";
-  /* let fontFace = "@import url('https://fonts.googleapis.com/css?family=Cousine:400,700&display=swap');"; */
+  let htmlStyle = {j|
+html {
+  height: 100vh;
+  background-color: $backgroundColor;
+  color: $textColor;
+}
+|j};
+
   let fontFace = {j|
 @font-face {
   font-family: 'Cousine for Powerline';
@@ -44,6 +45,7 @@ let make = () => {
   src: url('../assets/fonts/Cousine for Powerline.ttf'); /* IE9 Compat Modes */
 }
   |j};
+
   let bodyStyle = {j|
 body {
   display: flex;
@@ -54,29 +56,37 @@ body {
   line-height: 1.8em;
   letter-spacing: -0.01em;
   word-wrap: break-word;
+  font-family: 'Cousine for Powerline', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
   |j};
+
   let miscStyle = {j|
 ::selection {
   background-color: #79d688;
 }
   |j};
-  let markStyle =
-    "mark{background-color:"
-    ++ markColor
-    ++ ";}"
-    ++ "mark:hover{background-color:"
-    ++ markHover
-    ++ ";}";
-  let anchorStyle =
-    "a{text-decoration: none;cursor: pointer;color:"
-    ++ anchorColor
-    ++ ";}"
-    ++ "a:hover{color:"
-    ++ anchorHover
-    ++ ";}";
+
+  let markStyle = {j|
+mark {
+  background-color: $markColor;
+}
+mark:hover {
+  background-color: $markHover;
+}
+|j};
+
+  let anchorStyle = {j|
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: $anchorColor;
+}
+a:hover {
+  color: $anchorHover;
+}
+|j};
 
   let setStyle =
     htmlStyle ++ fontFace ++ bodyStyle ++ miscStyle ++ markStyle ++ anchorStyle;

@@ -3,9 +3,9 @@ module Styles = {
 
   let ul =
     style([
-      marginLeft(em(2.5)),
-      marginTop(em(0.8)),
-      paddingLeft(px(0)),
+      marginLeft(`em(2.5)),
+      marginTop(`em(0.8)),
+      paddingLeft(`px(0)),
       listStyle(`none, `inside, `none),
     ]);
 
@@ -13,7 +13,7 @@ module Styles = {
     style([
       before([
         position(`absolute),
-        marginLeft(em(-1.5)),
+        marginLeft(`em(-1.5)),
         contentRule({j|•|j}),
       ]),
     ]);
@@ -22,7 +22,7 @@ module Styles = {
     style([
       before([
         position(`absolute),
-        marginLeft(em(-1.5)),
+        marginLeft(`em(-1.5)),
         contentRule({j|⊗|j}),
       ]),
     ]);
@@ -31,7 +31,7 @@ module Styles = {
     style([
       before([
         position(`absolute),
-        marginLeft(em(-1.5)),
+        marginLeft(`em(-1.5)),
         contentRule({j|⊙|j}),
       ]),
     ]);

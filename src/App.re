@@ -34,14 +34,22 @@ let make = () => {
 
   let content = () =>
     switch (url.path) {
+    | [] => <CurViScene />
     | ["uses"] => <UsesScene />
-    | [""] => <CurViScene />
+    | ["poem"] =>
+      ReasonReact.Router.replace("poems");
+      <PoemsScene />;
+    | ["poems"] => <PoemsScene />
     | _ =>
-      ReasonReact.Router.push("");
+      ReasonReact.Router.replace("/");
       <CurViScene />;
     };
 
   <div className=Styles.container>
-    <div className=Styles.main> <Styled /> {content()} </div>
+    <div className=Styles.main>
+      <Styled />
+      <Header current={url.path !== [] ? List.hd(url.path) : "/"} />
+      {content()}
+    </div>
   </div>;
 };

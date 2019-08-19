@@ -37,28 +37,36 @@ let make = () => {
           variant: Done,
           text:
             <span>
-              {ReasonReact.string("Design apprentice at X-Graphic.")}
+              {ReasonReact.string("Design apprentice at ")}
+              <Link href="https://www.xg.co.id" text="X-Graphic" />
+              {ReasonReact.string(".")}
             </span>,
         },
         {
           variant: Done,
           text:
             <span>
-              {ReasonReact.string("Field inspector at Touchten Games.")}
+              {ReasonReact.string("Quality Assurance at ")}
+              <Link href="https://www.touchten.com" text="Touchten Games" />
+              {ReasonReact.string(".")}
             </span>,
         },
         {
           variant: Done,
           text:
             <span>
-              {ReasonReact.string("Reactive engineer at Vospay.")}
+              {ReasonReact.string("Reactive Engineer at ")}
+              <Link href="https://vospay.id" text="Vospay" />
+              {ReasonReact.string(".")}
             </span>,
         },
         {
           variant: Progress,
           text:
             <span>
-              {ReasonReact.string("Frontend Engineer at Kumparan.")}
+              {ReasonReact.string("Frontend Engineer at ")}
+              <Link href="https://kumparan.com" text="kumparan" />
+              {ReasonReact.string(".")}
             </span>,
         },
       |]
@@ -118,7 +126,7 @@ let make = () => {
           text:
             <span>
               <Link
-                href="mailto:bandungpenting@gmail.com"
+                href="mailto:bandungpenting@gmail.com?subject=From%20ybbond.dev"
                 text="bandungpenting@gmail.com"
               />
             </span>,

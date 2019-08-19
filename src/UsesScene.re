@@ -1,6 +1,4 @@
 [@react.component]
 let make = () => {
-  <React.Fragment>
-    <span>{ReasonReact.string("Hi")}</span>
-  </React.Fragment>
-}
+  <React.Fragment> <p> {ReasonReact.string("Uses")} </p> </React.Fragment>;
+};

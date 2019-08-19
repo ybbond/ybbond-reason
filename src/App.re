@@ -51,5 +51,6 @@ let make = () => {
       <Header current={url.path !== [] ? List.hd(url.path) : "/"} />
       {content()}
     </div>
+    <Footer />
   </div>;
 };

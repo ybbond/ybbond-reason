@@ -3,11 +3,11 @@ module Styles = {
 
   let summary =
     style([
-      fontSize(em(1.0)),
-      marginTop(em(1.0)),
-      marginBottom(em(1.0)),
-      marginLeft(px(0)),
-      marginRight(px(0)),
+      fontSize(`em(1.0)),
+      marginTop(`em(1.0)),
+      marginBottom(`em(1.0)),
+      marginLeft(`px(0)),
+      marginRight(`px(0)),
       flex(`num(1.0)),
       textAlign(`left),
       outlineStyle(`none),

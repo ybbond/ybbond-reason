@@ -10,21 +10,21 @@ module Styles = {
       display(`flex),
       flexDirection(`column),
       textAlign(`left),
-      padding(em(1.0)),
-      paddingTop(px(0)),
-      paddingBottom(px(0)),
-      fontSize(em(0.9)),
+      padding(`em(1.0)),
+      paddingTop(`px(0)),
+      paddingBottom(`px(0)),
+      fontSize(`em(0.9)),
     ]);
 
   let main =
     style([
       flexGrow(1.0),
       width(`percent(100.0)),
-      marginTop(px(0)),
-      marginBottom(px(0)),
+      marginTop(`px(0)),
+      marginBottom(`px(0)),
       marginLeft(`auto),
       marginRight(`auto),
-      maxWidth(em(50.0)),
+      maxWidth(`em(50.0)),
     ]);
 };
 

@@ -3,13 +3,13 @@ module Styles = {
 
   let footer =
     style([
-      width(`ch(100.0)),
+      width(`percent(100.0)),
       paddingTop(`px(30)),
       marginTop(`px(0)),
       marginLeft(`auto),
       marginRight(`auto),
       marginBottom(`em(1.0)),
-      maxWidth(em(50.0)),
+      maxWidth(`em(50.0)),
     ]);
 };
 

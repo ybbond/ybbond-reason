@@ -63,6 +63,12 @@ body {
   |j};
 
   let miscStyle = {j|
+h5 {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1em;
+  margin: 1em 0;
+}
 *:focus {
   outline-color: #79d688;
 }

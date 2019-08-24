@@ -63,11 +63,11 @@ let make = () => {
         {
           variant: Progress,
           text:
-            <span>
+            <h5>
               {ReasonReact.string("Frontend Engineer at ")}
               <Link href="https://kumparan.com" text="kumparan" />
               {ReasonReact.string(".")}
-            </span>,
+            </h5>,
         },
       |]
     />;
@@ -95,7 +95,11 @@ let make = () => {
         },
         {
           variant: Default,
-          text: <span> {ReasonReact.string("Vim user.")} </span>,
+          text:
+            <span>
+              <Link text="Vim user" internal="uses" />
+              {ReasonReact.string(".")}
+            </span>,
         },
         {
           variant: Default,
@@ -106,6 +110,7 @@ let make = () => {
                 href="https://goo.gl/maps/gMGbA5juGAx"
                 text="Jakarta, Indonesia"
               />
+              {ReasonReact.string(".")}
             </span>,
         },
       |]
@@ -118,18 +123,19 @@ let make = () => {
           variant: Default,
           text:
             <span>
-              {ReasonReact.string("everywhere: ybbond or bandungpenting")}
+              {ReasonReact.string("everywhere: ybbond or bandungpenting.")}
             </span>,
         },
         {
           variant: Default,
           text:
-            <span>
+            <h5>
               <Link
                 href="mailto:bandungpenting@gmail.com?subject=From%20ybbond.dev"
                 text="bandungpenting@gmail.com"
               />
-            </span>,
+              {ReasonReact.string(".")}
+            </h5>,
         },
         {
           variant: Default,

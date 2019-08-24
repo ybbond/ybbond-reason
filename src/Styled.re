@@ -63,6 +63,9 @@ body {
   |j};
 
   let miscStyle = {j|
+*:focus {
+  outline-color: #79d688;
+}
 ::selection {
   background-color: #79d688;
 }

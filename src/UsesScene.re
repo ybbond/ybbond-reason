@@ -1,7 +1,7 @@
 [@react.component]
 let make = () => {
   <React.Fragment>
-    <h3> {ReasonReact.string("Hardware and Platform")} </h3>
+    <h3> {ReasonReact.string("Platform")} </h3>
     <ContentList
       content=[|
         {
@@ -20,16 +20,66 @@ let make = () => {
         },
       |]
     />
+    <h3> {ReasonReact.string("Hardware")} </h3>
+    <ContentList
+      content=[|
+        {
+          variant: Default,
+          text:
+            <React.Fragment>
+              <span>
+                {ReasonReact.string("Ducky One 2 Mini Keyboard ")}
+                <Link
+                  text="image"
+                  href="https://twitter.com/bandungpenting/status/1146845120618090497"
+                />
+              </span>
+              <ContentList
+                content=[|
+                  {
+                    variant: Default,
+                    text:
+                      <span>
+                        {ReasonReact.string(
+                           "Farewell gift from friends at Kodefox and Vospay!",
+                         )}
+                      </span>,
+                  },
+                |]
+              />
+            </React.Fragment>,
+        },
+      |]
+    />
     <h3> {ReasonReact.string("Code Editor")} </h3>
     <ContentList
       content=[|
         {
           variant: Default,
-          text: <span> {ReasonReact.string("Neovim on Kitty")} </span>,
+          text:
+            <span>
+              {ReasonReact.string("Neovim on Kitty ")}
+              <Link
+                text="image"
+                href="https://twitter.com/bandungpenting/status/1162210601340305409"
+              />
+              {ReasonReact.string(" ")}
+              <Link
+                text="settings"
+                href="https://gist.github.com/ybbond/16ee5000eeca727899eac43a4c20291c"
+              />
+            </span>,
         },
         {
           variant: Default,
-          text: <span> {ReasonReact.string("Visual Studio Code")} </span>,
+          text:
+            <span>
+              {ReasonReact.string("Visual Studio Code ")}
+              <Link
+                text="settings"
+                href="https://gist.github.com/ybbond/5838223bb0c11b355cdbaf35e1599895"
+              />
+            </span>,
         },
       |]
     />
@@ -38,19 +88,47 @@ let make = () => {
       content=[|
         {
           variant: Default,
-          text: <span> {ReasonReact.string("Kitty")} </span>,
+          text:
+            <span>
+              {ReasonReact.string("Kitty ")}
+              <Link
+                text="settings"
+                href="https://gist.github.com/ybbond/25f8f04ce6f896ba19ecbbc10d4ba6fd"
+              />
+            </span>,
         },
         {
           variant: Default,
-          text: <span> {ReasonReact.string("Fish Shell")} </span>,
+          text:
+            <span>
+              {ReasonReact.string("Fish Shell ")}
+              <Link
+                text="settings"
+                href="https://gist.github.com/ybbond/e6f827f977248b5d9eda8e1c49da82e9"
+              />
+            </span>,
         },
         {
           variant: Default,
-          text: <span> {ReasonReact.string("Ranger File Manager")} </span>,
+          text:
+            <span>
+              <Link text="Ranger" href="https://github.com/ranger/ranger" />
+              {ReasonReact.string(" File Manager ")}
+              <Link
+                text="settings"
+                href="https://gist.github.com/ybbond/99acda0e787683c9b3b43e32752806ad"
+              />
+            </span>,
         },
         {
           variant: Default,
-          text: <span> {ReasonReact.string("lazygit")} </span>,
+          text:
+            <span>
+              <Link
+                text="lazygit"
+                href="https://github.com/jesseduffield/lazygit"
+              />
+            </span>,
         },
       |]
     />

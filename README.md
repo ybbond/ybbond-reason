@@ -2,7 +2,7 @@
 
 I tried remaking my personal website using [REasonREact](https://reasonml.github.io/reason-react/)
 
-previously, it is this website [ybbond.dev](https://ybbond.dev)
+previously, it is this website [ybbond.dev](https://ybbond.github.io)
 
 
 ## Contributing

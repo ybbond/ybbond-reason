@@ -41,10 +41,10 @@ let make = (~current: string) => {
       content,
     );
 
-  <React.Fragment>
+  <header>
     <h1 className=Styles.h1>
       {ReasonReact.string("Yohanes Bandung Bondowoso")}
     </h1>
     {React.array(contentElements)}
-  </React.Fragment>;
+  </header>;
 };

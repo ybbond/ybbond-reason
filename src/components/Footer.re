@@ -18,7 +18,7 @@ let make = () =>
   <footer className=Styles.footer>
     <p> {ReasonReact.string("See you sooner :)")} </p>
     <p>
-      {ReasonReact.string("@19/08/2019  ")}
+      {ReasonReact.string("@30/08/2019  ")}
       <Link text="ybbond" href="https://github.com/ybbond/ybbond-reason" />
     </p>
   </footer>;

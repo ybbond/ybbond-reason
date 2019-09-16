@@ -1,15 +1,33 @@
+module Styles = {
+  open Css;
+  let pre =
+    style([
+      paddingLeft(`em(1.4)),
+      fontFamily("Cousine for Powerline"),
+      display(`block),
+      whiteSpace(`preWrap),
+      fontSize(`em(0.8)),
+      lineHeight(`em(3.3)),
+    ]);
+};
+
 [@react.component]
 let make = () => {
-  <React.Fragment>
-    <p>
-      {ReasonReact.string(
-         "Poems have not been implemented on this web version :(",
-       )}
-    </p>
-    <p>
-      {ReasonReact.string("If you want to read them, ")}
-      <Link text="click here!" href="https://ybbond.github.io" />
-    </p>
-    <p> {ReasonReact.string("Then, check the 'literature'.")} </p>
-  </React.Fragment>;
+  open PoemContent;
+  let content: array(poemContent) = content;
+  let contentMapped =
+    Array.mapi(
+      (key, item) => {
+        let contentPre =
+          <pre className=Styles.pre> {ReasonReact.string(item.script)} </pre>;
+        <Spoiler
+          title={item.title}
+          content=contentPre
+          key={string_of_int(key)}
+        />;
+      },
+      content,
+    );
+
+  <React.Fragment> {ReasonReact.array(contentMapped)} </React.Fragment>;
 };

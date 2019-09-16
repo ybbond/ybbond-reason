@@ -3,7 +3,7 @@ module Styles = {
   let pre =
     style([
       paddingLeft(`em(1.4)),
-      fontFamily("Cousine for Powerline"),
+      fontFamily("Cousine for Powerline, monospace"),
       display(`block),
       whiteSpace(`preWrap),
       fontSize(`em(0.8)),

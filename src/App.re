@@ -32,6 +32,8 @@ module Styles = {
 let make = () => {
   let url = ReasonReact.Router.useUrl();
 
+  Js.log("Written with ReasonReact");
+
   let content = () =>
     switch (url.path) {
     | [] => <CurViScene />

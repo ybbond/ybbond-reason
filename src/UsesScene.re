@@ -40,9 +40,11 @@ let make = () => {
                     variant: Default,
                     text:
                       <span>
-                        {ReasonReact.string(
-                           "Farewell gift from friends at Kodefox and Vospay!",
-                         )}
+                        {ReasonReact.string("Farewell gift from friends at ")}
+                        <Link href="https://kodefox.com" text="Kodefox" />
+                        {ReasonReact.string(" and ")}
+                        <Link href="https://vospay.id" text="Vospay" />
+                        {ReasonReact.string("!")}
                       </span>,
                   },
                 |]
@@ -101,7 +103,7 @@ let make = () => {
           variant: Default,
           text:
             <span>
-              {ReasonReact.string("Fish Shell ")}
+              {ReasonReact.string("Z Shell (zsh) ")}
               <Link
                 text="settings"
                 href="https://gist.github.com/ybbond/e6f827f977248b5d9eda8e1c49da82e9"

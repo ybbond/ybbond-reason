@@ -16,7 +16,7 @@
   ],
   "suffix": ".bs.js",
   "namespace": true,
-  "bs-dependencies": ["bs-css", "bs-webapi", "reason-react"],
+  "bs-dependencies": ["bs-css", "bs-webapi", "bs-fetch", "reason-react"],
   "ppx-flags": [],
   "refmt": 3
 }

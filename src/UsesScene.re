@@ -60,7 +60,7 @@ let make = () => {
           variant: Default,
           text:
             <span>
-              {ReasonReact.string("Neovim on Kitty ")}
+              {ReasonReact.string("Neovim ")}
               <Link
                 text="image"
                 href="https://twitter.com/bandungpenting/status/1162210601340305409"
@@ -88,6 +88,17 @@ let make = () => {
     <h3> {ReasonReact.string("Terminal")} </h3>
     <ContentList
       content=[|
+        {
+          variant: Default,
+          text:
+            <span>
+              {ReasonReact.string("tmux on Alacritty ")}
+              <Link
+                text="settings"
+                href="https://gist.github.com/ybbond/26165e50f36a439b6b930607976a1e82"
+              />
+            </span>,
+        },
         {
           variant: Default,
           text:

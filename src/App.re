@@ -37,7 +37,8 @@ let make = () => {
   let content = () =>
     switch (url.path) {
     | [] => <CurViScene />
-    | ["uses"] => <UsesScene />
+    /* | ["uses"] => <UsesScene /> */
+    | ["uses"] => <BlogScene />
     | ["poem"] =>
       ReasonReact.Router.replace("poems");
       <PoemsScene />;

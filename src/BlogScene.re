@@ -1,5 +1,13 @@
 open BlogGistData;
 
+module Styles = {
+  open Css;
+
+  let strikethrough = style([textDecoration(`lineThrough)]);
+  let underline = style([textDecoration(`underline)]);
+  let h1 = style([fontWeight(`num(600)), fontSize(`em(1.4))]);
+};
+
 type state = {gist_content: option(BlogGistData.gist_return)};
 
 type action =
@@ -22,7 +30,6 @@ let make = () => {
   });
 
   <React.Fragment>
-    <h3> {ReasonReact.string("Blog")} </h3>
     {switch (state.gist_content) {
      | Some(story) =>
        let comp =
@@ -33,9 +40,12 @@ let make = () => {
              switch (blogContent) {
              | Some(value) =>
                <div key={string_of_int(key)}>
-                 <h1> {ReasonReact.string("# " ++ item.description)} </h1>
-                 <date> {ReasonReact.string(item.created_at)} </date>
-                 <BlogContent link={value.raw_url} />
+                 <BlogContent
+                   source={item.html_url}
+                   link={value.raw_url}
+                   title={item.description}
+                   createdAt={item.created_at}
+                 />
                </div>
              | None => <div />
              };

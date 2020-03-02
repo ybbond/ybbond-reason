@@ -32,12 +32,13 @@ module Styles = {
 let make = () => {
   let url = ReasonReact.Router.useUrl();
 
-  Js.log("Written with ReasonReact");
+  Js.log("Written with ReasonReact!");
 
   let content = () =>
     switch (url.path) {
     | [] => <CurViScene />
     | ["uses"] => <UsesScene />
+    | ["blog"] => <BlogScene />
     | ["poem"] =>
       ReasonReact.Router.replace("poems");
       <PoemsScene />;

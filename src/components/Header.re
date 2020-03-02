@@ -15,6 +15,7 @@ let content: array(contentType) = [|
   {title: "CV", path: "/"},
   {title: "Poems-Verses", path: "poems"},
   {title: "Uses", path: "uses"},
+  {title: "Blog (WIP)", path: "blog"},
 |];
 
 [@react.component]

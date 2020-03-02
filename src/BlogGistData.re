@@ -135,14 +135,9 @@ let fetchGist = callback =>
 let fetchBlog = (callback, link) =>
   Js.Promise.(
     Fetch.fetch(link)
-    |> then_(Fetch.Response.json)
-    |> then_(blog =>
-         Json.stringify(blog)
-         |> (
-           content => {
-             callback(content);
-             resolve();
-           }
-         )
-       )
+    |> then_(Fetch.Response.text)
+    |> then_(blog => {
+         callback(blog);
+         resolve();
+       })
   );

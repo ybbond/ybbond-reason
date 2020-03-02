@@ -6,8 +6,13 @@ module Styles = {
       fontFamily("Cousine for Powerline, monospace"),
       display(`block),
       whiteSpace(`preWrap),
-      fontSize(`em(0.8)),
-      lineHeight(`em(3.3)),
+      maxWidth(`px(544)),
+      fontSize(`em(0.9)),
+      lineHeight(`em(2.8)),
+      media(
+        "(max-width: 414px)",
+        [fontSize(`em(0.8)), lineHeight(`em(3.0))],
+      ),
     ]);
 };
 

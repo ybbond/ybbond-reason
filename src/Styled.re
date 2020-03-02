@@ -70,7 +70,8 @@ h5 {
   margin: 1em 0;
 }
 *:focus {
-  outline-color: #79d688;
+  outline-color: #79d688 !important;
+  outline: solid #79d688 !important;
 }
 ::selection {
   background-color: #79d688;

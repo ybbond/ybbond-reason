@@ -1,6 +1,12 @@
 module Styles = {
   open Css;
-  let h1 = style([fontWeight(`num(600)), fontSize(`em(1.2))]);
+  let h1 =
+    style([
+      fontWeight(`num(600)),
+      fontSize(`em(1.2)),
+      media("(max-width: 544px)", [fontSize(`em(1.1))]),
+    ]);
+
   let summary =
     style([
       fontSize(`em(1.0)),
@@ -12,6 +18,28 @@ module Styles = {
       textAlign(`left),
       cursor(`pointer),
       userSelect(`none),
+    ]);
+
+  let date =
+    style([
+      fontFamily("Cousine for Powerline, monospace"),
+      fontSize(`em(0.8)),
+      color(`hex("777777")),
+      whiteSpace(`nowrap),
+    ]);
+
+  let pre =
+    style([
+      fontFamily("Cousine for Powerline, monospace"),
+      display(`block),
+      whiteSpace(`preWrap),
+      maxWidth(`px(544)),
+      fontSize(`em(0.9)),
+      lineHeight(`em(2.8)),
+      media(
+        "(max-width: 544px)",
+        [fontSize(`em(0.8)), lineHeight(`em(3.0))],
+      ),
     ]);
 };
 
@@ -39,14 +67,17 @@ let make =
 
   <details>
     <summary className=Styles.summary> {ReasonReact.string(title)} </summary>
-    <h1 className=Styles.h1>
-      {ReasonReact.string("# " ++ title ++ " [")}
+    <h1 className=Styles.h1> {ReasonReact.string("# " ++ title)} </h1>
+    <span className=Styles.date>
+      <time>
+        {ReasonReact.string(
+           createdAt |> Js.Date.fromString |> Js.Date.toLocaleString,
+         )}
+      </time>
+      {ReasonReact.string(" [")}
       <Link href=source text="link" />
       {ReasonReact.string("]")}
-    </h1>
-    <date>
-      {ReasonReact.string(createdAt |> Js.Date.fromString |> Js.Date.toString)}
-    </date>
-    <pre> {ReasonReact.string(state.blog_content)} </pre>
+    </span>
+    <pre className=Styles.pre> {ReasonReact.string(state.blog_content)} </pre>
   </details>;
 };

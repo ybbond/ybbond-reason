@@ -49,8 +49,7 @@ type action =
   | Loaded(string);
 
 [@react.component]
-let make =
-    (~link: string, ~source: string, ~title: string, ~createdAt: string) => {
+let make = (~slug: string, ~id: string) => {
   let (state, dispatch) =
     React.useReducer(
       (_state, action) =>
@@ -61,21 +60,21 @@ let make =
     );
 
   React.useEffect0(() => {
-    BlogGistData.fetchBlog(data => dispatch(Loaded(data)), link) |> ignore;
+    BlogGistData.fetchBlog(data => dispatch(Loaded(data)), id) |> ignore;
     None;
   });
 
   <details open_=true>
-    <summary className=Styles.summary> {ReasonReact.string(title)} </summary>
-    <h1 className=Styles.h1> {ReasonReact.string("# " ++ title)} </h1>
+    <summary className=Styles.summary> {ReasonReact.string(slug)} </summary>
+    <h1 className=Styles.h1> {ReasonReact.string("# " ++ slug)} </h1>
     <span className=Styles.date>
       <time>
         {ReasonReact.string(
-           createdAt |> Js.Date.fromString |> Js.Date.toLocaleString,
+           id |> Js.Date.fromString |> Js.Date.toLocaleString,
          )}
       </time>
       {ReasonReact.string(" [")}
-      <Link href=source text="link" />
+      <Link href=slug text="link" />
       {ReasonReact.string("]")}
     </span>
     <pre className=Styles.pre> {ReasonReact.string(state.blog_content)} </pre>

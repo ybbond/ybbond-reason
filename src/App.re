@@ -39,6 +39,7 @@ let make = () => {
     | [] => <CurViScene />
     | ["uses"] => <UsesScene />
     | ["blog"] => <BlogScene />
+    | ["blog", slug, id] => <BlogContentScene slug id />
     | ["poem"] =>
       ReasonReact.Router.replace("poems");
       <PoemsScene />;

@@ -19,6 +19,6 @@ let make = () =>
     <p> {ReasonReact.string("See you sooner :)")} </p>
     <p>
       {ReasonReact.string("@16/11/2019  ")}
-      <Link text="ybbond" href="https://ybbond.com/" />
+      <Link text="ybbond" href="https://ybbond.dev/" />
     </p>
   </footer>;
